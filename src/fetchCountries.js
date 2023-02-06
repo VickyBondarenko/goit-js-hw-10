@@ -2,8 +2,18 @@
 // 2. Функція пошуку
 // 3. Перевірка на кільеість отриманних данних
 
-const countryRequest = fetch(`https://restcountries.com/v3.1/name/${country}}`);
-booksRequest
+const FILTER = {
+  countryName: name.official,
+  capital: capital,
+  population: population,
+  flag: flags.svg,
+  languages: languages,
+};
+const { name, capital, population, flag } = FILTER;
+const countryRequest = fetch(
+  `https://restcountries.com/v3.1/name/${country}?fields=${countryName},${capital},${population},${flag},${languages}}`
+);
+countryRequest
   .then(response => {
     if (!response.ok) {
       throw Error('Can not fetch books');

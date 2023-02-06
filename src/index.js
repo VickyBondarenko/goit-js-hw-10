@@ -20,3 +20,5 @@ function onInput(event) {
   console.log(event.currentTarget.value);
 }
 // debounce(onImput(), DEBOUNCE_DELAY);
+
+// const markupCountry = `<img src=${flag}/><h2>${countryName}</h2><ul><li>Capital: ${capital}</li><li>Population: ${population}</li><li> Languages: ${languages}</li></ul>`;
