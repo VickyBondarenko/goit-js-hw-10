@@ -14,11 +14,14 @@ console.log(countryInfo);
 const country = input.value;
 console.log(country);
 
-input.addEventListener('input', onInput());
+input.addEventListener('input', event =>
+  console.log(event.currentTarget.value)
+);
 
-function onInput(event) {
-  console.log(event.currentTarget.value);
-}
+// function onInput(event) {
+//   console.log(event.currentTarget.value);
+// }
+
 // debounce(onImput(), DEBOUNCE_DELAY);
 
 // const markupCountry = `<img src=${flag}/><h2>${countryName}</h2><ul><li>Capital: ${capital}</li><li>Population: ${population}</li><li> Languages: ${languages}</li></ul>`;
