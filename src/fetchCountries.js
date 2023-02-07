@@ -43,7 +43,7 @@ export function fetchCountries(name) {
 function renderCountryList(countries) {
   const markupCountryList = countries
     .map(({ flags, name }) => {
-      return `<li><img src=${flags.svg} alt = ${flags.alt} width = 60/><p class="country-name">${name.common}</p></li>`;
+      return `<li class = "country-item"><img class="country-flag" src=${flags.svg} alt = ${flags.alt} width = 50/><p class="country-name">${name.common}</p></li>`;
     })
     .join('');
   countryList.insertAdjacentHTML('beforeend', markupCountryList);
@@ -52,11 +52,11 @@ function renderCountryList(countries) {
 function renderCountryCard(countries) {
   const markupCountryCard = countries
     .map(({ flags, name, capital, population, languages }) => {
-      return `<img src=${flags.svg} alt = ${
+      return `<div class="country-div"><img src=${flags.svg} alt = ${
         flags.alt
-      } width = 60/><h2 class="country-singl-name">${
+      } width = 50/><h2 class="country-singl-name">${
         name.common
-      }</h2><ul><li><span class="property">Capital:</span> ${capital}</li><li><span class="property">Population:</span> ${population}</li><li> <span class="property">Languages:</span> ${Object.values(
+      }</h2></div><ul><li class="country-property"><span>Capital:</span> ${capital}</li><li class="country-property"><span>Population:</span> ${population}</li><li class="country-property"> <span>Languages:</span> ${Object.values(
         languages
       )}</li></ul>`;
     })
