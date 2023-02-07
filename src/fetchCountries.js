@@ -19,7 +19,6 @@ export function fetchCountries(name) {
       return response.json();
     })
     .then(countries => {
-      console.log(countries);
       if (countries.length >= 10) {
         Notify.info(
           'Too many matches found. Please enter a more specific name.'
@@ -27,15 +26,12 @@ export function fetchCountries(name) {
         return;
       }
       if (countries.length < 10 && countries.length > 2) {
-        console.log(`countries list`);
         renderCountryList(countries);
       } else {
-        console.log(`one country`);
         renderCountryCard(countries);
       }
     })
     .catch(error => {
-      console.log(error.message);
       Notify.failure(error.message);
     });
 }
