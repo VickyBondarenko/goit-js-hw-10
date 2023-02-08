@@ -11,21 +11,6 @@ const countryInfo = document.querySelector('.country-info');
 
 input.addEventListener('input', debounce(onSerch, DEBOUNCE_DELAY));
 
-// function onSerch(event) {
-//   event.preventDefault();
-//   const country = event.target.value.trim();
-//   if (country !== '') {
-//     clearMarkup();
-//     fetchCountries(country);
-//   }
-//   clearMarkup();
-// }
-
-// function clearMarkup() {
-//   countryList.innerHTML = '';
-//   countryInfo.innerHTML = '';
-// }
-
 function onSerch(event) {
   event.preventDefault();
   const country = event.target.value.trim();
